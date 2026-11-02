@@ -114,17 +114,19 @@ code {
     text-align: start;
 }
 /* Little Lambs: Shared watercolor palette and responsive page layouts. */
-body { background: #faf7f2; color: #37352f; font-family: 'Century Gothic', 'Trebuchet MS', sans-serif; }
+body { background: #faf7f2; color: #37352f; font-family: 'Century Gothic', 'Trebuchet MS', sans-serif; line-height: 1.65; }
 a { color: #665642; text-underline-offset: 3px; }
 a:hover { color: #94654e; }
 a:focus-visible { outline: 2px solid #94654e; outline-offset: 5px; }
 h1, h2 { font-weight: 400; }
 h1 { font-size: 2rem; margin-bottom: 2rem; }
 h2 { font-size: 1.5rem; }
-.home-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: #f1ece5; border-block: 1px solid #dfd3c5; padding: 0 1rem; }
-.leaf-link { background: url('../images/leaf.png') center / 100% 100% no-repeat; min-width: 150px; min-height: 65px; display: grid; place-content: center; text-align: center; text-decoration: none; font-size: .95rem; }
-.watercolor-banner { height: 150px; background: radial-gradient(ellipse at 20% 120%, #e9e4d7 0, transparent 55%), radial-gradient(ellipse at 90% 70%, #e6e3d4 0, transparent 50%); opacity: .7; }
-.home-introduction { display: grid; grid-template-columns: 1fr 1.5fr 1fr; align-items: end; gap: 2rem; padding: 0 1.5rem; margin-top: -65px; position: relative; }
+.program-comparison { background: #f1ece5; border-block: 1px solid #dfd3c5; padding: 2rem clamp(1.5rem, 5vw, 5rem); }
+.program-comparison .program-grid > section { display: flex; flex-direction: column; align-items: flex-start; padding: 1.5rem; background: #faf7f2; border: 1px solid #dfd3c5; border-radius: 12px; }
+.program-comparison .enroll-button { margin-top: auto; }
+.interest-note { margin: 1.5rem 0 0; font-size: .9rem; color: #665642; text-align: center; }
+.watercolor-banner { height: 120px; background: radial-gradient(ellipse at 20% 120%, #e9e4d7 0, transparent 55%), radial-gradient(ellipse at 90% 70%, #e6e3d4 0, transparent 50%); opacity: .7; }
+.home-introduction { display: grid; grid-template-columns: 1fr 1.5fr 1fr; align-items: center; gap: 2rem; padding: 0 1.5rem; margin-top: -65px; position: relative; }
 .portrait { background: url('../images/portrait-frame.png') center / 100% 100% no-repeat; aspect-ratio: 1; text-align: center; padding: 5% 12% 15%; color: #292822; text-decoration: none; border: 4px solid white; }
 .portrait h2, .philosophy-preview h2 { font-family: 'Segoe Print', cursive; font-size: clamp(1rem, 1.9vw, 1.6rem); margin: 0 0 .4rem; }
 .portrait img { width: 100%; height: 76%; object-fit: cover; object-position: center 42%; border: 5px solid white; }
@@ -132,12 +134,12 @@ h2 { font-size: 1.5rem; }
 .philosophy-preview p { max-width: 340px; margin: .6rem auto; line-height: 1.5; }
 .philosophy-preview .ribbon { background: #c78974; font-size: .85rem; padding: .3rem 1.3rem; width: fit-content; clip-path: polygon(0 0, 100% 0, 93% 50%, 100% 100%, 0 100%, 7% 50%); }
 .curriculum-preview img { width: 100%; display: block; }
-.teacher-introduction { text-align: center; max-width: 330px; font-size: 1.2rem; line-height: 1.5; margin: .5rem auto 2rem; }
+.teacher-introduction { text-align: center; max-width: 640px; font-size: 1.15rem; line-height: 1.8; margin: 2rem auto; padding: 0 1.5rem; }
 .preschool-highlights { list-style: none; max-width: 740px; margin: 2rem auto; padding: 0 1.5rem; font-size: 1.2rem; }
 .preschool-highlights li { min-height: 80px; display: flex; align-items: center; padding: .75rem 0 .75rem 90px; background: url('../images/sun.png') left center / 70px no-repeat; }
 .welcome-summary { max-width: 750px; text-align: center; margin: 3rem auto; padding: 0 1.5rem; font-size: 1.2rem; }
 .information-page { padding: 4rem clamp(1.5rem, 5vw, 5rem); font-size: 1.15rem; line-height: 1.7; background: radial-gradient(ellipse at bottom right, #eee5d6, transparent 65%); }
-.information-page p { margin-bottom: 1.8rem; }
+.information-page p { margin-bottom: 1.8rem; max-width: 72ch; }
 .information-page h2 { margin-top: 2rem; }
 .information-page li { margin-bottom: .5rem; }
 .page-subtitle { color: #806b53; font-style: italic; }
@@ -145,16 +147,19 @@ h2 { font-size: 1.5rem; }
 .information-page::after { content: ''; display: block; clear: both; }
 .program-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .enrollment-steps { border-top: 1px solid #d9cbbb; margin-top: 2rem; }
-.enroll-button { display: inline-block; background: #dfc5ac; padding: .7rem 2rem; border-radius: 4px; }
-.questions h2 { font-family: inherit; font-size: 1.15rem; font-weight: 600; }
+.enroll-button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; background: #dfc5ac; color: #42372c; border: 1px solid #c6a78a; padding: .7rem 1.5rem; border-radius: 8px; text-align: center; text-decoration: none; font-weight: 600; }
+.enroll-button:hover { background: #d2b394; color: #30271f; }
+.enroll-button:focus-visible { outline: 3px solid #665642; outline-offset: 4px; }
+.questions h2 { font-family: inherit; font-size: 1.15rem; font-weight: 600; line-height: 1.5; padding-top: 1.5rem; border-top: 1px solid #dfd3c5; }
 @media (max-width: 700px) {
-    .home-nav { flex-wrap: wrap; justify-content: center; gap: .8rem; padding: .8rem; }
-    .leaf-link { min-width: 115px; min-height: 55px; }
+    .program-comparison .program-grid { gap: 1rem; }
+    .program-comparison .program-grid > section { padding: 1.25rem; }
+    .program-comparison .enroll-button { width: 100%; }
     .watercolor-banner { height: 80px; }
     .home-introduction { grid-template-columns: 1fr; max-width: 420px; margin: -30px auto 0; gap: 1.5rem; }
     .portrait h2, .philosophy-preview h2 { font-size: 1.8rem; }
     .curriculum-preview { max-width: 300px; margin: auto; }
-    .teacher-introduction { margin: 2rem auto; padding: 0 1.5rem; font-size: 1.15rem; }
+    .teacher-introduction { margin: 2rem auto; padding: 0 1.5rem; font-size: 1.05rem; }
     .preschool-highlights { font-size: 1rem; }
     .program-grid { grid-template-columns: 1fr; gap: 0; }
     .information-page { padding-top: 2rem; font-size: 1rem; }

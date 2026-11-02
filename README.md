@@ -51,7 +51,7 @@ The published static site is generated in `LittleLamb/bin/Release/net10.0/publis
 | `LittleLamb/wwwroot/index.html` | App entry point |
 | `.github/workflows/deploy-pages.yml` | GitHub Pages build and deployment |
 
-Navigation appears in both `Layout/NavMenu.razor` and `Pages/Home.razor`. Update both when changing site navigation. Keep internal links relative so they work locally and under the GitHub Pages repository path.
+Main navigation lives in `Layout/NavMenu.razor`. The homepage compares preschool and childcare and links to their separate interest forms. Keep internal links relative so they work locally and under the GitHub Pages repository path.
 
 ## GitHub Pages deployment
 

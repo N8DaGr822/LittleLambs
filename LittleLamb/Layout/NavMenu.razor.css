@@ -1,13 +1,13 @@
 .site-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    padding: 1rem 2rem;
+    gap: .5rem 1rem;
+    padding: .5rem 1rem;
     border-bottom: 1px solid #e6ded5;
 }
-.site-nav ::deep a { color: #746f68; text-decoration: none; }
+.site-nav ::deep a { display: inline-flex; align-items: center; min-height: 44px; padding: .4rem .5rem; color: #625b52; text-decoration: none; }
 .site-nav ::deep a:hover, .site-nav ::deep a.active { color: #41392e; text-decoration: underline; text-underline-offset: 5px; }
 @media (max-width: 600px) {
-    .site-nav { justify-content: center; gap: .8rem 1.2rem; padding: 1rem; font-size: .9rem; }
+    .site-nav { justify-content: center; gap: .25rem .5rem; padding: .5rem; font-size: .9rem; }
 }
