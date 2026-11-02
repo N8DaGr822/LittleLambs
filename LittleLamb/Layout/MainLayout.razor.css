@@ -1,0 +1,8 @@
+.site-header, .site-main, .site-footer { max-width: 1280px; margin: 0 auto; }
+.brand { display: block; text-align: center; padding: 8px 0 0; }
+.brand img { width: min(520px, 90%); height: 130px; object-fit: contain; }
+.site-footer { padding: 3rem 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2rem; border-top: 1px solid #e6ded5; text-align: center; }
+.site-footer a { color: #574f45; }
+.skip-link { position: absolute; left: 1rem; top: -100px; z-index: 10; background: white; padding: 1rem; }
+.skip-link:focus { top: 1rem; }
+
