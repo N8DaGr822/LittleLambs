@@ -21,12 +21,21 @@ jobs:
         with:
           dotnet-version: '10.0.x'
       - uses: actions/configure-pages@v5
+        id: pages
       - name: Publish Blazor app
         run: dotnet publish LittleLamb/LittleLamb.csproj --configuration Release --output publish
       - name: Prepare Pages hosting
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: |
-          # Pages Hosting: Keep local development at / and deploy under the repository path.
-          sed -i 's|<base href="/" />|<base href="/LittleLambs/" />|' publish/wwwroot/index.html
+          # Project URLs use /LittleLambs/; a custom domain serves at /.
+          base_path="${PAGES_BASE_PATH%/}/"
+          case "$base_path" in
+            /|/LittleLambs/) ;;
+            *) echo "Unexpected Pages base path: $base_path" >&2; exit 1 ;;
+          esac
+          grep -Fq '<base href="/" />' publish/wwwroot/index.html
+          sed -i "s|<base href=\"/\" />|<base href=\"$base_path\" />|" publish/wwwroot/index.html
           # Blazor Routing: Load the app for direct visits and refreshes of client routes.
           cp publish/wwwroot/index.html publish/wwwroot/404.html
           touch publish/wwwroot/.nojekyll
